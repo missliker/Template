@@ -1,6 +1,6 @@
 # run.bat
 
-```json
+```bash
 g++ A__Generator.cpp -o A__Generator -std=c++23 -O2 -g
 g++ A.cpp -o A -std=c++23 -O2 -g
 g++ A__Good.cpp -o A__Good -std=c++23 -O2 -g
@@ -19,7 +19,7 @@ goto loop
 
 # remove.bat
 
-```json
+```bash
 del A__Generator.exe
 del A.exe
 del A__Good.exe
