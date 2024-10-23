@@ -1,8 +1,8 @@
 复杂度:
 
-预处理:$O(nlogn)$
+预处理:O(nlogn)
 
-查询:$O(1)$
+查询:O(1)
 
 # 模板
 
@@ -70,7 +70,6 @@ int main() {
     while (q--) {
         int l, r;
         cin >> l >> r;
-        l++;
         cout << st(l, r) << '\n';
     }
 
