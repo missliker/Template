@@ -13,6 +13,12 @@ using i64 = long long;
 using Pair = pair<i64, i64>;
 constexpr i64 INF = 1E18 + 10;
 
+#ifdef Iris
+#include "debug.h"
+#else
+#define debug(...) void(0)
+#endif
+
 struct Info {
     int u;
     i64 d;
@@ -41,13 +47,17 @@ int main() {
 
     vector<i64> dis(n + 1, INF);
     vector<int> st(n + 1);
-    dis[1] = 0LL;
+    dis[1] = 0;
 
     while (not heap.empty()) {
-        if (cnt >= n) break;
+        if (cnt >= n) {
+            break;
+        }
         auto [u, d] = heap.top();
         heap.pop();
-        if (st[u]) continue;
+        if (st[u]) {
+            continue;
+        }
         st[u] = 1;
         cnt++;
         res += d;
@@ -58,7 +68,9 @@ int main() {
             }
         }
     }
-    if (cnt != n) res = -1;
+    if (cnt != n) {
+        res = -1;
+    }
     cout << res << '\n';
 
     return 0;
@@ -73,6 +85,14 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
+using Pair = pair<i64, i64>;
+constexpr i64 INF = 1E18 + 10;
+
+#ifdef Iris
+#include "debug.h"
+#else
+#define debug(...) void(0)
+#endif
 
 struct Info {
     int u, v;
@@ -110,7 +130,9 @@ int main() {
             p[u] = v;
         }
     }
-    if (cnt != n - 1) res = -1;
+    if (cnt != n - 1) {
+        res = -1;
+    }
     cout << res << '\n';
 
     return 0;
