@@ -10,7 +10,7 @@
 
 ```cpp
 template <typename T>
-struct ST {
+struct SparseTable {
     int n;
     vector<T> vec;
     vector<int> lg;
@@ -65,7 +65,8 @@ int main() {
     for (int i = 1; i <= n; i++) {
         cin >> a[i];
     }
-    ST<i64> st(a, [&](i64 x, i64 y) { return min(x, y); });
+    SparseTable<i64> st(a, [&](i64 x, i64 y) { return min(x, y); });
+    // 这里SparseTable的类型要和a的类型一致，否则会报错
 
     while (q--) {
         int l, r;
