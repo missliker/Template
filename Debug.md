@@ -3,14 +3,33 @@
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
+
+struct BoolAlphaSetter {
+    BoolAlphaSetter() {
+        cerr.setf(ios_base::boolalpha);
+        cout.setf(ios_base::boolalpha);
+    }
+};
+static BoolAlphaSetter boolAlphaSetter;
+
 template <class T, size_t size = tuple_size<T>::value>
 string to_debug(T, string s = "")
     requires(not ranges::range<T>);
 string to_debug(auto x)
     requires requires(ostream& os) { os << x; }
 {
-    return static_cast<ostringstream>(ostringstream() << x).str();
+    ostringstream oss;
+    oss.setf(ios_base::boolalpha);
+    oss << x;
+    return oss.str();
 }
+
+// string to_debug(auto x)
+//     requires requires(ostream& os) { os << x; }
+// {
+//     return static_cast<ostringstream>(ostringstream() << x).str();
+// }
+
 string to_debug(ranges::range auto x, string s = "")
     requires(not is_same_v<decltype(x), string>)
 {
@@ -28,6 +47,7 @@ string to_debug(T x, string s)
     }(make_index_sequence<size>());
     return "(" + s.substr(s.empty() ? 0 : 2) + ")";
 }
+
 #define debug(...) cerr << __FILE__ ":" << __LINE__ << ": (" #__VA_ARGS__ ") = " << to_debug(tuple(__VA_ARGS__)) << "\n"
 ```
 
