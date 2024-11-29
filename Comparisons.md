@@ -40,12 +40,19 @@ del diff.log
 #include <bits/stdc++.h>
 using namespace std;
 using i64 = long long;
+using d64 = long double;
 using Pair = pair<i64, i64>;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 i64 intRand(i64 mod) { return rng() * rng() % mod; }
 
 i64 intRand(i64 l, i64 r) { return l + intRand(r - l + 1); }
+
+d64 doubleRand(d64 l, d64 r) {
+    uniform_real_distribution<d64> dis(l, r);
+    d64 res = dis(rng);
+    return res;
+}
 
 char smallCharRand() { return char('a' + intRand(26)); }
 

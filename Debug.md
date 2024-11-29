@@ -2,7 +2,6 @@
 
 ```c++
 #include <bits/stdc++.h>
-// using namespace std;
 
 struct BoolAlphaSetter {
     BoolAlphaSetter() {
@@ -12,6 +11,14 @@ struct BoolAlphaSetter {
 };
 static BoolAlphaSetter boolAlphaSetter;
 
+struct Setprecision20 {
+    Setprecision20() {
+        std::cerr << fixed << setprecision(20);
+        std::cout << fixed << setprecision(20);
+    }
+};
+static Setprecision20 setprecision20;
+
 template <class T, std::size_t size = std::tuple_size<T>::value>
 std::string to_debug(T, std::string s = "")
     requires(not std::ranges::range<T>);
@@ -20,6 +27,7 @@ std::string to_debug(auto x)
 {
     std::ostringstream oss;
     oss.setf(std::ios_base::boolalpha);
+    oss << fixed << setprecision(20);
     oss << x;
     return oss.str();
 }
