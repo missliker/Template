@@ -29,6 +29,8 @@ struct Hash {
     const int Base1 = 31, Base2 = 37;
     static int Mod1, Mod2;
     vector<i64> Hash1, Hash2, Power1, Power2;
+    
+    Hash() {}
 
     Hash(const string& str) {
         int N = str.size();
@@ -78,3 +80,4 @@ int main() {
 }
 ```
 
+想把N放在构造函数外面，看看后面行不行
