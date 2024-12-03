@@ -11,7 +11,7 @@ auto getmn = [&](vector<int>& a, int k) {
             q.pop_back();
         }
         q.push_back(i);
-        if (q.front() < i - k + 1) {
+        if (q.front() <= i - k) {
             q.pop_front();
         }
         if (i >= k) {
@@ -29,7 +29,7 @@ auto getmx = [&](vector<int>& a, int k) {
             q.pop_back();
         }
         q.push_back(i);
-        if (q.front() < i - k + 1) {
+        if (q.front() <= i - k) {
             q.pop_front();
         }
         if (i >= k) {
@@ -76,7 +76,7 @@ int main() {
                 q.pop_back();
             }
             q.push_back(i);
-            if (q.front() < i - k + 1) {
+            if (q.front() <= i - k) {
                 q.pop_front();
             }
             if (i >= k) {
@@ -94,7 +94,7 @@ int main() {
                 q.pop_back();
             }
             q.push_back(i);
-            if (q.front() < i - k + 1) {
+            if (q.front() <= i - k) {
                 q.pop_front();
             }
             if (i >= k) {
