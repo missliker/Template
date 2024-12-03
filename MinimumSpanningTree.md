@@ -6,7 +6,7 @@
 
 ## Prim
 
-复杂度：O(nlogn + m)
+复杂度： $O(nlogn + m)$
 
 ```c++
 #include <bits/stdc++.h>
@@ -81,7 +81,7 @@ int main() {
 
 ## Kruskal
 
-复杂度：O(mlogm)
+复杂度： $O(mlogm)$
 
 ```c++
 #include <bits/stdc++.h>
