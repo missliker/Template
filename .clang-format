@@ -1,0 +1,35 @@
+BasedOnStyle: LLVM
+UseTab: Never
+IndentWidth: 4
+DerivePointerAlignment: false
+PointerAlignment: true
+AlwaysBreakAfterReturnType: None
+AlwaysBreakTemplateDeclarations: true
+AlwaysBreakBeforeMultilineStrings: true
+AlignOperands: true
+AlignAfterOpenBracket: true
+AlignConsecutiveBitFields: true
+AlignConsecutiveMacros: true
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+AllowAllConstructorInitializersOnNextLine: false
+BinPackArguments: true
+BinPackParameters: true
+IncludeBlocks: Regroup
+# 允许短的块放在同一行
+AllowShortBlocksOnASingleLine: false
+# 允许短的case标签放在同一行
+AllowShortCaseLabelsOnASingleLine: true
+# 允许短的函数放在同一行: None, InlineOnly(定义在类中), Empty(空函数), Inline(定义在类中，空函数), All
+AllowShortFunctionsOnASingleLine: All
+# 允许短的if语句保持在同一行
+AllowShortIfStatementsOnASingleLine:  AllIfsAndElse
+# 允许短的循环保持在同一行
+AllowShortLoopsOnASingleLine: true
+# 连续空行的最大数量
+MaxEmptyLinesToKeep: 1
+
+# AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: true
+AllowShortLambdasOnASingleLine: Inline
+
+ColumnLimit: 200
