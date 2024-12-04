@@ -45,6 +45,7 @@ struct SparseTable {
     }
 
     T operator()(int l, int r) {
+        assert(l <= r);
         int k = lg[r - l + 1];
         return op(info[k][l], info[k][r - (1 << k) + 1]);
     }
