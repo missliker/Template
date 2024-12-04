@@ -266,6 +266,30 @@ ofs.close();
 
 
 
+## 代码运行时间
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+int main() {
+    clock_t Time = clock();
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cout << fixed << setprecision(20);
+
+    int a, b;
+    cin >> a >> b;
+    int ans = 0;
+    for (int i = 0; i < a; i++) ans++;
+    for (int i = 0; i < b; i++) ans++;
+    cout << ans << '\n';
+
+    cerr << "Time Used: " << clock() - Time << "ms" << endl;
+    return 0;
+}
+```
+
 
 
 
