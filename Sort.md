@@ -3,38 +3,80 @@
 ## MergeSort
 
 ```c++
-auto nxd = [&](vector<int>& v) {
-    i64 cnt = 0;
-    int n = v.size();
+auto mergeSort = [&](vector<int>& in) {
+    auto vec = in;
+    int n = int(vec.size()) - 1;
+    assert(n >= 1);
     vector<int> tmp(n + 1);
 
-    function<void(int, int)> mergeSort = [&](int l, int r) {
+    auto mSort = [&](this auto&& self, int l, int r) {
         if (l >= r) return;
-        int mid = (l + r) / 2;
-        mergeSort(l, mid), mergeSort(mid + 1, r);
+        int m = (l + r) / 2;
+        self(l, m), self(m + 1, r);
 
-        int k = 0, i = l, j = mid + 1;
-        while (i <= mid and j <= r) {
-            if (v[i] <= v[j]) {
-                tmp[k++] = v[i++];
+        int k = 0, i = l, j = m + 1;
+        while (i <= m and j <= r) {
+            if (vec[i] <= vec[j]) {
+                tmp[k++] = vec[i++];
             } else {
-                tmp[k++] = v[j++];
-                cnt += mid - i + 1;
+                tmp[k++] = vec[j++];
             }
         }
-        while (i <= mid) {
-            tmp[k++] = v[i++];
+        while (i <= m) {
+            tmp[k++] = vec[i++];
         }
         while (j <= r) {
-            tmp[k++] = v[j++];
+            tmp[k++] = vec[j++];
         }
 
         for (i = l, j = 0; i <= r; i++, j++) {
-            v[i] = tmp[j];
+            vec[i] = tmp[j];
         }
     };
-    mergeSort(1, n);
-    return cnt;
+    mSort(1, n);
+
+    return vec;
+};
+```
+
+### 归并排序求逆序对
+
+```c++
+auto getInvPair = [&](vector<int>& in) {
+    auto vec = in;
+    int n = int(vec.size()) - 1;
+    assert(n >= 1);
+    i64 res = 0;
+    vector<int> tmp(n + 1);
+
+    function<void(int, int)> mSort = [&](int l, int r) {
+        if (l >= r) return;
+        int m = (l + r) / 2;
+        mSort(l, m), mSort(m + 1, r);
+
+        int k = 0, i = l, j = m + 1;
+        while (i <= m and j <= r) {
+            if (vec[i] <= vec[j]) {
+                tmp[k++] = vec[i++];
+            } else {
+                tmp[k++] = vec[j++];
+                res += m - i + 1;
+            }
+        }
+        while (i <= m) {
+            tmp[k++] = vec[i++];
+        }
+        while (j <= r) {
+            tmp[k++] = vec[j++];
+        }
+
+        for (i = l, j = 0; i <= r; i++, j++) {
+            vec[i] = tmp[j];
+        }
+    };
+    mSort(1, n);
+
+    return res;
 };
 ```
 
