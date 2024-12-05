@@ -123,13 +123,13 @@ adjacent_difference(a.begin(), a.end(), b.begin());
 ```
 
 ```cpp
-//rotate
-//将[a.begin(),a.begin() + 2)这部分 和 
-//[a.begin() +  2,a.begin() + 4)这部分交换位置
+// rotate
+// 将[a.begin(),a.begin() + 2)这部分 和 
+// [a.begin() +  2,a.begin() + 4)这部分交换位置
 vector<int> a{1, 2, 3, 4, 5};
 rotate(a.begin(), a.begin() + 2, a.begin() + 4);
 for (auto x : a) cout << x << ' ';
-//{3, 4, 1, 2, 5}
+// {3, 4, 1, 2, 5}
 ```
 
 ```cpp
@@ -144,32 +144,32 @@ double res = log(x);
 ```
 
 ```cpp
-//最后一个元素
+// 最后一个元素
 *a.rbegin()
 a.back()
 ```
 
 ```cpp
-//partial_sum,前缀和
-vector<int> a(10), b(10); //要先保证里面是有存储空间的
-iota(a.begin(), a.end(), 1);//生成[1, 10)
+// partial_sum,前缀和
+vector<int> a(10), b(10); // 要先保证里面是有存储空间的
+iota(a.begin(), a.end(), 1); // 生成[1, 10)
 
 partial_sum(a.begin(), a.end(), b.begin());
 copy(b.begin(), b.end(), ostream_iterator<int>(cout, " "));
-//输出1, 3, 6, 10, 15, 21, 28, 36, 45, 55
+// 输出1, 3, 6, 10, 15, 21, 28, 36, 45, 55
 ```
 
 ```cpp
-vector<int> a(10);//要先保证里面是有存储空间的
-iota(a.begin(), a.end(), 1);//生成[1, 10)
-random_shuffle(a.begin(), a.end());//随机打乱
+vector<int> a(10); // 要先保证里面是有存储空间的
+iota(a.begin(), a.end(), 1); // 生成[1, 10)
+random_shuffle(a.begin(), a.end()); // 随机打乱
 copy(a.begin(), a.end(), ostream_iterator<int>(cout, " "));
 ```
 
 ```cpp
-//nth_element,可以找到第k小的数
-//前面的都比a[k]小，后面的都比a[k]大，但不保证顺序
-//最小的是第0小
+// nth_element,可以找到第k小的数
+// 前面的都比a[k]小，后面的都比a[k]大，但不保证顺序
+// 最小的是第0小
 int k;
 cin >> k;
 vector<int> a{100, 200, 300, 400, 500};
@@ -177,6 +177,13 @@ random_shuffle(a.begin(), a.end());
 nth_element(a.begin(), a.begin() + k, a.end());
 cout << a[k];
 ```
+
+```c++
+// 1 + log2(x)
+int log = bit_width(x); // x为无符号整数类型（unsigned int、unsigned long、unsigned long long 或扩展无符号整数类型）
+```
+
+
 
 
 
