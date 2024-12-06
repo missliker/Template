@@ -25,7 +25,12 @@ dic.contains(12); // GNU C++20 支持 contains 函数
 
 constexpr double Pi = numbers::pi; // C++20 支持
 
-ranges::sort(vec); // C++23支持
+ranges::sort(vec); // C++23 支持
+auto dfs = [&](this auto&& self, int x) -> void { // C++23 支持
+    if (x > 10) return;
+    self(x + 1);
+};
+dfs(1);
 ```
 
 
