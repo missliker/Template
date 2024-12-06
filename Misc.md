@@ -103,6 +103,9 @@ numeric_limits<i64>::min();
 
 // i64类型的最小值
 numeric_limits<i64>::lowest();
+
+// 圆周率PI
+numbers::pi;
 ```
 
 ```cpp
@@ -173,6 +176,7 @@ copy(a.begin(), a.end(), ostream_iterator<int>(cout, " "));
 int k;
 cin >> k;
 vector<int> a{100, 200, 300, 400, 500};
+srand(time(nullptr));
 random_shuffle(a.begin(), a.end());
 nth_element(a.begin(), a.begin() + k, a.end());
 cout << a[k];
@@ -257,18 +261,48 @@ freopen("D:/Code/data.out", "w", stdout);
 
 // 随机
 srand(time(nullptr));
+random_shuffle(a.begin(), a.end());
+```
 
-// 定义
-ofstream ofs;
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
 
-// 打开
-ofs.open("data.in", ios::out);
+#ifdef missliker
+#include "debug.h"
+#else
+#define debug(...) void(0)
+#endif
 
-// 把n和endl输入到data里面
-ofs << n << endl;
+int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cout << fixed << setprecision(20);
 
-// 最后要关闭文件
-ofs.close();
+    ifstream fr;
+    ofstream fw;
+
+    fw.open("./data.txt");
+    int n = 10;
+    fw << n << endl;
+    for (int i = 1; i <= n; i++) {
+        fw << n - i + 1 << ' ';
+    }
+    fw.close();
+
+    fr.open("./data.txt");
+    int m = 1;
+    fr >> m;
+    cout << m << endl;
+    vector<int> a(m + 1);
+    for (int i = 1; i <= m; i++) {
+        fr >> a[i];
+    }
+    copy(a.begin() + 1, a.end(), ostream_iterator<int>(cout, " "));
+    fr.close();
+
+    return 0;
+}
 ```
 
 
