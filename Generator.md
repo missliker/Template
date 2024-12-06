@@ -1,6 +1,6 @@
 # generator.h
 
-我把头文件默认放在了debug.h里
+头文件默认存放在debug.h中
 
 ```c++
 #include <bits/stdc++.h>
