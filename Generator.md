@@ -255,3 +255,43 @@ int main() {
 }
 ```
 
+输出
+
+```c++
+D:\C++\main.cpp:16: (i) = (4135492039)
+D:\C++\main.cpp:18: (i2) = (7)
+D:\C++\main.cpp:20: (d) = (49.99612785149524022896)
+D:\C++\main.cpp:22: (d2) = (16.25282088628535063883)
+D:\C++\main.cpp:24: (s) = (pzde)
+D:\C++\main.cpp:26: (s2) = (NAHJFBLLODTCTABFSXNEVCQRI)
+D:\C++\main.cpp:28: (s3) = (  9Axt5)
+D:\C++\main.cpp:31: (n, m) = (6, 20)
+D:\C++\main.cpp:33: (v1) = ([678105752, 75485252, 944473554, 134141252, 626936518, 157210080])
+D:\C++\main.cpp:35: (v2) = ([13, 43, 11, 43, 37, 43])
+D:\C++\main.cpp:37: (v3) = ([947910433, 2010030779, 1610163612, 2381299406, 2835325639, 4227781962])
+D:\C++\main.cpp:39: (v4) = ([157, 13, 124, 5, 5, 7])
+D:\C++\main.cpp:41: (v5) = ([v, h, s, g, n, g])
+D:\C++\main.cpp:43: (v6) = ([Q, V, A, M, V, R])
+D:\C++\main.cpp:45: (v7) = ([ayivmckjp, cmsyzviiak, goxxvmtdlg, hql, i, wd])
+D:\C++\main.cpp:47: (v8) = ([47484083, 8658717891, 6190983945, 699410425096, 7545112263705352, 336838366729088407])
+D:\C++\main.cpp:50: (n) = (6)
+D:\C++\main.cpp:52: (u, v) = (2, 1)
+D:\C++\main.cpp:52: (u, v) = (3, 2)
+D:\C++\main.cpp:52: (u, v) = (4, 2)
+D:\C++\main.cpp:52: (u, v) = (5, 1)
+D:\C++\main.cpp:52: (u, v) = (6, 1)
+D:\C++\main.cpp:55: () = ()
+D:\C++\main.cpp:59: (n, m) = (6, 9)
+D:\C++\main.cpp:61: (u, v) = (4, 5)
+D:\C++\main.cpp:61: (u, v) = (4, 3)
+D:\C++\main.cpp:61: (u, v) = (4, 1)
+D:\C++\main.cpp:61: (u, v) = (5, 3)
+D:\C++\main.cpp:61: (u, v) = (5, 0)
+D:\C++\main.cpp:61: (u, v) = (2, 3)
+D:\C++\main.cpp:61: (u, v) = (2, 0)
+D:\C++\main.cpp:61: (u, v) = (3, 0)
+D:\C++\main.cpp:61: (u, v) = (1, 0)
+D:\C++\main.cpp:64: (std::numeric_limits<short>::max()) = (32767)
+D:\C++\main.cpp:65: (RAND_MAX) = (32767)
+```
+
