@@ -168,10 +168,12 @@ copy(b.begin(), b.end(), ostream_iterator<int>(cout, " "));
 ```
 
 ```cpp
+// 打乱序列
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 vector<int> a(10); // 要先保证里面是有存储空间的
 iota(a.begin(), a.end(), 1); // 生成[1, 10)
-random_shuffle(a.begin(), a.end()); // 随机打乱
-copy(a.begin(), a.end(), ostream_iterator<int>(cout, " "));
+shuffle(a.begin(), a.end(), rng);
+copy(a.begin(), a.end(), ostream_iterator<int>(cout, " "));  // 输出
 ```
 
 ```cpp
