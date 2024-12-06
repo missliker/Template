@@ -1,4 +1,6 @@
-# 数据生成器
+# generator.h
+
+我把头文件默认放在了debug.h里
 
 ```c++
 #include <bits/stdc++.h>
@@ -176,6 +178,81 @@ std::vector<Pair> graphRand(i64 n) {
         }
     }
     return graph;
+}
+```
+
+
+
+用法
+
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+using i64 = long long;
+
+#ifdef missliker
+#include "debug.h"
+#else
+#define debug(...) void(0)
+#endif
+
+int main() {
+    cin.tie(nullptr)->sync_with_stdio(false);
+    cout << fixed << setprecision(20);
+
+    auto i = Rand<i64>();
+    debug(i);
+    auto i2 = Rand<i64>(1, 120);
+    debug(i2);
+    auto d = Rand<d64>();
+    debug(d);
+    auto d2 = Rand<d64>(12, 100.0);
+    debug(d2);
+    auto s = Rand<string>();
+    debug(s);
+    auto s2 = Rand<string>(25, "big");
+    debug(s2);
+    auto s3 = Rand<string>(i2, "other");
+    debug(s3);
+
+    int n = 6, m = 20, l = 1, r = 100;
+    debug(n, m);
+    auto v1 = Rand<vector<int>>(n);
+    debug(v1);
+    auto v2 = Rand<vector<int>>(n, l, r);
+    debug(v2);
+    auto v3 = Rand<vector<i64>>(n);
+    debug(v3);
+    auto v4 = Rand<vector<i64>>(n, 3, 234);
+    debug(v4);
+    auto v5 = Rand<vector<char>>(n);
+    debug(v5);
+    auto v6 = Rand<vector<char>>(n, "big");
+    debug(v6);
+    auto v7 = Rand<vector<string>>(n);
+    debug(v7);
+    auto v8 = Rand<vector<string>>(n, m, "number");
+    debug(v8);
+
+    auto tree = treeRand(n);
+    debug(n);
+    for (auto& [u, v]: tree) {
+        debug(u, v);
+    }
+
+    debug();
+
+    auto graph = graphRand(n);
+    m = graph.size();
+    debug(n, m);
+    for (auto& [u, v] : graph) {
+        debug(u, v);
+    }
+
+    debug(std::numeric_limits<short>::max());
+    debug(RAND_MAX);
+
+    return 0;
 }
 ```
 
