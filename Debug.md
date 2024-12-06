@@ -2,6 +2,7 @@
 
 ```c++
 #include <bits/stdc++.h>
+#include <generator.h>
 
 struct BoolAlphaSetter {
     BoolAlphaSetter() {
