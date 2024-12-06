@@ -25,7 +25,7 @@ dic.contains(12); // GNU C++20 支持 contains 函数
 
 constexpr double Pi = numbers::pi; // C++20 支持
 
-ranges::sosrt(vec); // C++23支持
+ranges::sort(vec); // C++23支持
 ```
 
 
