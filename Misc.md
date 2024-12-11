@@ -141,6 +141,30 @@ int log = bit_width(x); // x为无符号整数类型（unsigned int、unsigned l
 
 
 
+## 输出某个对象的类型
+
+首先引入cxxabi.h库
+
+```c++
+#include <cxxabi.h>
+```
+
+对于一个未知变量x
+
+```c++
+// auto x = ...
+const char* mangled_name = typeid(x).name();
+int status;
+char* demangled_name = abi::__cxa_demangle(mangled_name, nullptr, nullptr, &status);
+if (status == 0) {
+    std::cout << "Demangled name: " << demangled_name << std::endl;
+} else {
+    std::cout << "Mangled name: " << mangled_name << std::endl;
+}
+```
+
+
+
 ## 日期换算（基姆拉尔森公式）
 
 已知年月日，求星期数。
