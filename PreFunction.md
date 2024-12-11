@@ -1,3 +1,5 @@
+# 自定义模板类函数
+
 ```c++
 struct range_param {
     std::size_t begin{};
@@ -180,6 +182,8 @@ auto rd(size_t n, size_t off = 0) {
 ```
 
 用法
+
+**注意一定要放在include <debug.h>后**
 
 ```c++
 int main() {

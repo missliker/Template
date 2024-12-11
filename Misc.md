@@ -35,61 +35,6 @@ dfs(1);
 
 
 
-## 日期换算（基姆拉尔森公式）
-
-已知年月日，求星期数。
-
-```cpp
-int week(int y, int m, int d) {
-    if (m <= 2) {
-        m += 12, y--;
-    }
-    return (d + 2 * m + 3 * (m + 1) / 5 + y + y / 4 - y / 100 + y / 400) % 7 + 1;
-}
-```
-
-
-
-## 约瑟夫问题
-
-n 个人编号 0,1,2…,n−1 ，每次数到 k 出局，求最后剩下的人的编号。
-
-如果编号从1开始，则res++。
-
-O(N) 。
-
-```cpp
-int jos(int n, int k) {
-    int res = 0;
-    for (int i = 1; i <= n; i++) {
-        res = (res + k) % i;
-    }
-    return res;
-}
-```
-
-O(Klog⁡N) ，适用于 K 较小的情况。
-
-```cpp
-int jos(int n, int k) {
-    if (n == 1 or k == 1) {
-        return n - 1;
-    }
-    if (k > n) {
-        return (jos(n - 1, k) + k) % n;
-    }
-    int res = jos(n - n / k, k) - n % k;
-    if (res < 0) {
-        res += n;
-    } else {
-        res += res / (k - 1);
-    }
-    return res;
-}
-```
-
-
-
 ## 有用的函数
 
 ```cpp
@@ -195,6 +140,59 @@ int log = bit_width(x); // x为无符号整数类型（unsigned int、unsigned l
 ```
 
 
+
+## 日期换算（基姆拉尔森公式）
+
+已知年月日，求星期数。
+
+```cpp
+int week(int y, int m, int d) {
+    if (m <= 2) {
+        m += 12, y--;
+    }
+    return (d + 2 * m + 3 * (m + 1) / 5 + y + y / 4 - y / 100 + y / 400) % 7 + 1;
+}
+```
+
+
+
+## 约瑟夫问题
+
+n 个人编号 0,1,2…,n−1 ，每次数到 k 出局，求最后剩下的人的编号。
+
+如果编号从1开始，则res++。
+
+O(N) 。
+
+```cpp
+int jos(int n, int k) {
+    int res = 0;
+    for (int i = 1; i <= n; i++) {
+        res = (res + k) % i;
+    }
+    return res;
+}
+```
+
+O(Klog⁡N) ，适用于 K 较小的情况。
+
+```cpp
+int jos(int n, int k) {
+    if (n == 1 or k == 1) {
+        return n - 1;
+    }
+    if (k > n) {
+        return (jos(n - 1, k) + k) % n;
+    }
+    int res = jos(n - n / k, k) - n % k;
+    if (res < 0) {
+        res += n;
+    } else {
+        res += res / (k - 1);
+    }
+    return res;
+}
+```
 
 
 
@@ -337,5 +335,4 @@ int main() {
     return 0;
 }
 ```
-
 
