@@ -191,9 +191,7 @@ O(N) 。
 ```cpp
 int jos(int n, int k) {
     int res = 0;
-    for (int i = 1; i <= n; i++) {
-        res = (res + k) % i;
-    }
+    for (int i : range(1, n + 1)) res = (res + k) % i;
     return res;
 }
 ```
@@ -215,6 +213,14 @@ int jos(int n, int k) {
         res += res / (k - 1);
     }
     return res;
+}
+```
+
+```c++
+int jos(int n, int k, i64 q) {
+  if (k == 1) return n - 1;
+  for (q = q * k + k - 1; q >= n; q = q - n + (q - n) / (k - 1));
+  return q;
 }
 ```
 
