@@ -435,4 +435,3 @@ auto rd(size_t n, size_t off = 0) {
     return rd<tuple<T1, T2, Args...>>(n, off);
 }
 ```
-

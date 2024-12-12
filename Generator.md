@@ -3,6 +3,7 @@
 头文件默认存放在debug.h中
 
 ```c++
+#pragma once
 #include <bits/stdc++.h>
 using i64 = long long;
 using d32 = double;
