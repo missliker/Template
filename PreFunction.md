@@ -253,6 +253,9 @@ int main() {
     print(vs);
     print(max(vs));
     print(min(vs));
+    
+	auto tmp = max(vs);
+    debug(tmp);
 
     return 0;
 }

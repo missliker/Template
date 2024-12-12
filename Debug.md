@@ -1,6 +1,7 @@
 # debug.h
 
 ```c++
+#pragma once
 #include <bits/stdc++.h>
 #include <generator.h>
 
