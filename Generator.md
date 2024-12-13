@@ -85,7 +85,7 @@ T Rand() {
 }
 
 template <typename T>
-std::enable_if_t<std::is_same_v<T, int> || std::is_same_v<T, i64> || std::is_same_v<T, d32> || std::is_same_v<T, d64>, T> Rand(T l, T r) {
+std::enable_if_t<std::is_same_v<T, int> or std::is_same_v<T, i64> or std::is_same_v<T, d32> or std::is_same_v<T, d64>, T> Rand(T l, T r) {
     if constexpr (std::is_same_v<T, int>) return i64Rand(l, r);
     if constexpr (std::is_same_v<T, i64>) return i64Rand(l, r);
     if constexpr (std::is_same_v<T, d32>) return d64Rand(l, r);
@@ -118,7 +118,7 @@ std::enable_if_t<std::is_same_v<T, std::vector<std::string>>, T> Rand(i64 n, i64
 }
 
 template <typename T>
-std::enable_if_t<std::is_same_v<T, char> || std::is_same_v<T, int> || std::is_same_v<T, i64> || std::is_same_v<T, d32> || std::is_same_v<T, d64> || std::is_same_v<T, std::string>, std::vector<T>>
+std::enable_if_t<std::is_same_v<T, char> or std::is_same_v<T, int> or std::is_same_v<T, i64> or std::is_same_v<T, d32> or std::is_same_v<T, d64> or std::is_same_v<T, std::string>, std::vector<T>>
 Rand(i64 n) {
     std::vector<T> res;
     for (i64 i = 0; i < n; i++) res.emplace_back(Rand<T>());
@@ -127,8 +127,8 @@ Rand(i64 n) {
 }
 
 template <typename T>
-std::enable_if_t<std::is_same_v<T, std::vector<char>> || std::is_same_v<T, std::vector<int>> || std::is_same_v<T, std::vector<i64>> || std::is_same_v<T, std::vector<d32>> ||
-                     std::is_same_v<T, std::vector<d64>> || std::is_same_v<T, std::vector<std::string>>,
+std::enable_if_t<std::is_same_v<T, std::vector<char>> or std::is_same_v<T, std::vector<int>> or std::is_same_v<T, std::vector<i64>> or std::is_same_v<T, std::vector<d32>> or
+                     std::is_same_v<T, std::vector<d64>> or std::is_same_v<T, std::vector<std::string>>,
                  T>
 Rand(i64 n) {
     T res;
@@ -137,7 +137,7 @@ Rand(i64 n) {
 }
 
 template <typename T>
-std::enable_if_t<std::is_same_v<T, char> || std::is_same_v<T, int> || std::is_same_v<T, i64> || std::is_same_v<T, d32> || std::is_same_v<T, d64> || std::is_same_v<T, std::string>, std::vector<T>>
+std::enable_if_t<std::is_same_v<T, char> or std::is_same_v<T, int> or std::is_same_v<T, i64> or std::is_same_v<T, d32> or std::is_same_v<T, d64> or std::is_same_v<T, std::string>, std::vector<T>>
 Rand(i64 n, T l, T r) {
     std::vector<T> res;
     for (i64 i = 0; i < n; i++) res.emplace_back(Rand<T>(l, r));
@@ -145,8 +145,8 @@ Rand(i64 n, T l, T r) {
 }
 
 template <typename T>
-std::enable_if_t<std::is_same_v<T, std::vector<char>> || std::is_same_v<T, std::vector<int>> || std::is_same_v<T, std::vector<i64>> || std::is_same_v<T, std::vector<d32>> ||
-                     std::is_same_v<T, std::vector<d64>> || std::is_same_v<T, std::vector<std::string>>,
+std::enable_if_t<std::is_same_v<T, std::vector<char>> or std::is_same_v<T, std::vector<int>> or std::is_same_v<T, std::vector<i64>> or std::is_same_v<T, std::vector<d32>> or
+                     std::is_same_v<T, std::vector<d64>> or std::is_same_v<T, std::vector<std::string>>,
                  T>
 Rand(i64 n, typename T::value_type l, typename T::value_type r) {
     T res;
