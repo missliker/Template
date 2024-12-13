@@ -86,17 +86,17 @@ auto make_vector(T1 m, T2 n, Args... arg) {
 template <typename T>
 T transposed(T a) {
     if (a.empty()) return a;
-    size_t m = a.size(), n = a[0].size();
+    std::size_t m = a.size(), n = a[0].size();
     T b(n, vector<typename T::value_type::value_type>(m));
-    for (size_t j : range(n)) {
-        for (size_t i : range(m)) {
+    for (std::size_t j : range(n)) {
+        for (std::size_t i : range(m)) {
             b[j][i] = a[i][j];
         }
     }
     return b;
 }
 
-template <typename Tuple, typename F, size_t... N>
+template <typename Tuple, typename F, std::size_t... N>
 void TupleCall(Tuple& t, F&& f, std::index_sequence<N...>) {
     (f(get<N>(t)), ...);
 }
@@ -120,33 +120,33 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& v) {
 
 template <typename T, typename... Args>
 void print(const T& t, const Args&... args) {
-    cout << t;
+    std::cout << t;
     if constexpr (sizeof...(args)) {
-        cout << ' ';
+        std::cout << ' ';
         print(args...);
     } else {
-        cout << '\n';
+        std::cout << '\n';
     }
 }
 
 template <typename T = i64>
 auto rd() {
     T tmp;
-    cin >> tmp;
+    std::cin >> tmp;
     return tmp;
 }
 
-template <size_t N, typename T = i64>
+template <std::size_t N, typename T = i64>
 auto rd() {
-    array<T, N> res;
-    for (auto& x : res) cin >> x;
+    std::array<T, N> res;
+    for (auto& x : res) std::cin >> x;
     return res;
 }
 
 template <typename T = i64>
-auto rd(size_t n, size_t off = 0) {
-    vector<T> v(off + n);
-    for (size_t i : range(off, off + n)) cin >> v[i];
+auto rd(std::size_t n, std::size_t off = 0) {
+    std::vector<T> v(off + n);
+    for (std::size_t i : range(off, off + n)) std::cin >> v[i];
     return v;
 }
 ```
@@ -260,9 +260,9 @@ auto make_vector(T1 m, T2 n, Args... arg) {
 template <typename T>
 T transposed(T a) {
     if (a.empty()) return a;
-    size_t m = a.size(), n = a[0].size();
+    std::size_t m = a.size(), n = a[0].size();
     T b(n, vector<typename T::value_type::value_type>(m));
-    for (size_t j : range(n)) {
+    for (std::size_t j : range(n)) {
         for (size_t i : range(m)) {
             b[j][i] = a[i][j];
         }
@@ -302,12 +302,12 @@ std::ostream& operator<<(std::ostream& out, const std::vector<T>& v) {
 // 用法：print(a, b, c);
 template <typename T, typename... Args>
 void print(const T& t, const Args&... args) {
-    cout << t;
+    std::cout << t;
     if constexpr (sizeof...(args)) {
-        cout << ' ';
+        std::cout << ' ';
         print(args...);
     } else {
-        cout << '\n';
+        std::cout << '\n';
     }
 }
 
@@ -317,25 +317,25 @@ void print(const T& t, const Args&... args) {
 template <typename T = i64>
 auto rd() {
     T tmp;
-    cin >> tmp;
+    std::cin >> tmp;
     return tmp;
 }
 
 // 读取多个值
 // 用法：auto [a, b] = rd<2, int>();
-template <size_t N, typename T = i64>
+template <std::size_t N, typename T = i64>
 auto rd() {
-    array<T, N> res;
-    for (auto& x : res) cin >> x;
+    std::array<T, N> res;
+    for (auto& x : res) std::cin >> x;
     return res;
 }
 
 // 读取n个值
 // 用法：auto vec = rd<int>(n);
 template <typename T = i64>
-auto rd(size_t n, size_t off = 0) {
-    vector<T> v(off + n);
-    for (size_t i : range(off, off + n)) cin >> v[i];
+auto rd(std::size_t n, std::size_t off = 0) {
+    std::vector<T> v(off + n);
+    for (std::size_t i : range(off, off + n)) std::cin >> v[i];
     return v;
 }
 ```
