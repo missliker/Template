@@ -73,6 +73,12 @@ auto sorted(auto a, Args&&... args) {
     return a;
 }
 
+template <typename T, typename Pred>
+auto threshold_search(T start, T end, Pred pred) {
+    auto range = std::ranges::iota_view(start, end);
+    return *std::ranges::partition_point(range, pred);
+}
+
 template <typename T>
 auto make_vector(T x) {
     return x;
