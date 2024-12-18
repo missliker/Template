@@ -3,7 +3,7 @@
 ## 封装超快读
 
 ```c++
-template <size_t S>
+template <std::size_t S>
 struct Scanner {
     char buf[S], *l = buf, *r = buf;
     bool flush() {
@@ -11,11 +11,11 @@ struct Scanner {
         r = l + fread(buf, 1, S, stdin);
         return l == r;
     }
-    void get(char& c) { c = l == r && flush() ? ' ' : *l++; }
+    void get(char& c) { c = l == r and flush() ? ' ' : *l++; }
     friend Scanner& operator>>(Scanner& in, char& c) { return in.get(c), in; }
     friend Scanner& operator>>(Scanner& in, char* s) {
         for (in.get(s[0]); isspace(s[0]); in.get(s[0]));
-        for (int i = 0; !isspace(s[i]) || (s[i] = '\0'); i++) in.get(s[i + 1]);
+        for (int i = 0; !isspace(s[i]) or (s[i] = '\0'); i++) in.get(s[i + 1]);
         return in;
     }
     friend Scanner& operator>>(Scanner& in, std::string& s) {
@@ -51,10 +51,10 @@ struct Scanner {
     }
 };
 
-template <size_t S>
+template <std::size_t S>
 struct Printer {
     char buf[S], *l = buf, *r = buf + S - 1;
-    int format = 0, precision = 15;
+    int format = 0, precision = 20;
     ~Printer() { flush(); }
     void flush() {
         fwrite(buf, 1, l - buf, stdout);
@@ -104,8 +104,8 @@ struct Printer {
     }
 };
 
-Scanner<1048576> in;
-Printer<1048576> out;
+Scanner<1 << 20> in;
+Printer<1 << 20> out;
 ```
 
 具体使用
