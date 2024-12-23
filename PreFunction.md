@@ -1,6 +1,6 @@
 # 自定义模板类函数
 
-无中文注释版
+无中文注释版，更新版本不支持views::stride()函数的写法
 
 ```c++
 struct range_param {
@@ -8,8 +8,24 @@ struct range_param {
     std::size_t end{};
     std::size_t step{1};
 };
-auto range(std::size_t begin, std::size_t end, std::size_t step = 1) { return views::iota(begin, end) | views::stride(step); }
-auto range(std::size_t end) { return views::iota(0UZ, end) | views::stride(1); }
+// auto range(std::size_t begin, std::size_t end, std::size_t step = 1) { return views::iota(begin, end) | views::stride(step); }
+// auto range(std::size_t end) { return views::iota(0UZ, end) | views::stride(1); }
+// auto range(range_param param) { return range(param.begin, param.end, param.step); }
+
+template <typename T>
+auto range(T begin, T end, T step = 1) {
+    vector<T> result;
+    for (T i = begin; i < end; i += step) {
+        result.push_back(i);
+    }
+    return result;
+}
+
+template <typename T>
+auto range(T end) {
+    return range(T(0), end, T(1));
+}
+
 auto range(range_param param) { return range(param.begin, param.end, param.step); }
 
 bool chmax(auto& x, auto&& y) { return (x < y) ? (x = y, true) : false; }
