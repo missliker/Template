@@ -1,0 +1,12 @@
+{
+  "ulu-theme-settings@@ulu-color-accent": "ulu-purple",
+  "ulu-theme-settings@@ulu-cards-border": true,
+  "ulu-theme-settings@@ulu-cards-shadow": false,
+  "ulu-theme-settings@@ulu-codeblocks": "ulu-gummy-codeblock",
+  "ulu-theme-settings@@ulu-border": "ulu-dborder",
+  "ulu-theme-settings@@ulu-subtheme-selection": "ulu-origami",
+  "ulu-theme-settings@@ulu-theme-light": "none",
+  "ulu-theme-settings@@ulu-theme-dark": "none",
+  "ulu-theme-settings@@ulu-list-distinct": false,
+  "ulu-theme-settings@@ulu-scrollbars": false
+}

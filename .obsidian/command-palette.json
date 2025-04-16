@@ -1,0 +1,8 @@
+{
+  "pinned": [
+    "workspace:copy-url",
+    "theme:switch",
+    "app:reload",
+    "app:open-settings"
+  ]
+}

@@ -1,0 +1,27 @@
+Checks: >
+  -*,
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-*,
+  cppcoreguidelines-*,
+  clang-analyzer-*,
+  portability-*,
+  misc-*,
+  hicpp-*
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+AnalyzeTemporaryDtors: true
+CheckOptions:
+  - key:             modernize-use-nullptr.NullMacros
+    value:           'NULL'
+  - key:             readability-identifier-naming.VariableCase
+    value:           'camelBack'
+  - key:             readability-identifier-naming.ClassCase
+    value:           'CamelCase'
+  - key:             readability-identifier-naming.FunctionCase
+    value:           'camelBack'
+  - key:             cppcoreguidelines-pro-bounds-array-to-pointer-decay.WarnAboutArrayToPointerDecay
+    value:           true
+  - key:             cppcoreguidelines-special-member-functions.IgnoreMacros
+    value:           true
